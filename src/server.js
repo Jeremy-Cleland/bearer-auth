@@ -26,11 +26,11 @@ app.use(authRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
+const start = () => {
+  app.listen(PORT, () => console.log(`Server Up on ${PORT}`));
+};
+
 module.exports = {
   server: app,
-  start: (port) => {
-    app.listen(port, () => {
-      console.log(`Server Up on ${port}`);
-    });
-  },
+  start: start,
 };
